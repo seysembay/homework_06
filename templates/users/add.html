@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="d-flex justify-content-center">
+        <form class="mt-3" method="post">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+            <div class="row mb-3">
+                <label class="col-sm-12 col-form-label">First name</label>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" name="firstname" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-12 col-form-label">Last name</label>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" name="lastname" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-12 col-form-label">Email</label>
+                <div class="col-sm-12">
+                    <input type="email" class="form-control" name="email" required>
+                </div>
+            </div>
+            <fieldset class="row mb-3">
+                <legend class="col-form-label col-sm-12 pt-0">Gender</legend>
+                <div class="col-sm-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" value="female" checked>
+                        <label class="form-check-label">Female</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" value="male">
+                        <label class="form-check-label">Male</label>
+                    </div>
+                </div>
+            </fieldset>
+            <button type="submit" class="btn btn-success">Save</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="d-flex justify-content-center flex-wrap mt-3">
+        {% if users %}
+        {% for user in users %}
+        <div class="card mb-2" style="width: 18rem; margin-left: 7px;">
+            <div class="card-body">
+                <h5 class="card-title">{{ user.lastname }} {{ user.firstname }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ user.gender }}</h6>
+                <button class="btn btn-primary btn-sm">More details...</button>
+                <button class="btn btn-danger btn-sm" style="margin-left: 10px;">Delete</button>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <h3>No users yet.</h3>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
